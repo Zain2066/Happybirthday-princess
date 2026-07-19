@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(135deg,#000,#240046,#5a189a);
+color:white;
+text-align:center;
+overflow-x:hidden;
+}
+
+.container{
+padding:40px 20px;
+}
+
+h1{
+font-size:42px;
+}
+
+h2{
+color:#ffb3ff;
+}
+
+.letter{
+max-width:700px;
+margin:auto;
+background:rgba(255,255,255,.08);
+padding:20px;
+border-radius:20px;
+line-height:1.8;
+}
+
+footer{
+margin:50px;
+font-size:20px;
+color:pink;
+}
+
+.heart{
+position:fixed;
+color:#ff4d6d;
+font-size:25px;
+animation:float 8s linear infinite;
+}
+
+@keyframes float{
+0%{transform:translateY(100vh);}
+100%{transform:translateY(-120vh);}
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<h1>Happy Birthday ❤️</h1>
+
+<h2>My Beautiful Princess</h2>
+
+<div class="letter">
+
+<p>
+
+Today is the day the world received I received ❤️ the most beautiful soul I have ever known.
+
+Even though I cannot stand beside you today or hand you a gift, please know that every beat of my heart celebrates you.
+
+You are my happiness, my peace, my biggest blessing.
+
+I pray that your life is filled with endless smiles, success, good health, and every dream your heart carries.
+
+Thank you for existing.
+
+Happy Birthday, My Love.
+
+I love you today, tomorrow, and always.
+
+❤️
+
+</p>
+
+</div>
+
+<h2>Every second brings us closer to the day we'll finally meet.</h2>
+
+<footer>
+Forever Yours ❤️
+</footer>
+
+</div>
+
+<script>
+for(let i=0;i<40;i++){
+let h=document.createElement("div");
+h.className="heart";
+h.innerHTML="❤";
+h.style.left=Math.random()*100+"%";
+h.style.animationDuration=(5+Math.random()*6)+"s";
+h.style.fontSize=(15+Math.random()*20)+"px";
+document.body.appendChild(h);
+}
+</script>
+
+</body>
+</html>
