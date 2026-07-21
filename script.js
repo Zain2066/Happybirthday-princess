@@ -301,3 +301,135 @@ function createConfetti() {
     }
 
 }
+// ======================================
+// Background Music
+// ======================================
+
+const bgMusic = document.getElementById("bgMusic");
+const musicToggle = document.getElementById("musicToggle");
+
+let musicPlaying = false;
+
+musicToggle.addEventListener("click", () => {
+
+    if (musicPlaying) {
+
+        bgMusic.pause();
+        musicToggle.innerHTML = "🎵 Play Music";
+
+    } else {
+
+        bgMusic.play();
+        musicToggle.innerHTML = "⏸ Pause Music";
+
+    }
+
+    musicPlaying = !musicPlaying;
+
+});
+
+// ======================================
+// Floating Hearts
+// ======================================
+
+function createHeart() {
+
+    const heart = document.createElement("div");
+
+    heart.className = "floating-heart";
+
+    heart.innerHTML = "❤️";
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (20 + Math.random() * 25) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+
+}
+
+setInterval(createHeart, 500);
+
+// ======================================
+// Final Fireworks
+// ======================================
+
+function launchFirework() {
+
+    const firework = document.createElement("div");
+
+    firework.className = "firework";
+
+    firework.style.left = Math.random() * 90 + "vw";
+    firework.style.top = (20 + Math.random() * 50) + "vh";
+    firework.style.background =
+        `hsl(${Math.random() * 360},100%,60%)`;
+
+    document.body.appendChild(firework);
+
+    setTimeout(() => {
+        firework.remove();
+    }, 1000);
+
+}
+
+function startFireworks() {
+
+    let count = 0;
+
+    const show = setInterval(() => {
+
+        launchFirework();
+
+        count++;
+
+        if (count >= 40) {
+
+            clearInterval(show);
+
+        }
+
+    }, 150);
+
+}
+
+// ======================================
+// Grand Finale
+// ======================================
+
+function finalSurprise() {
+
+    startFireworks();
+
+    surpriseMessage.innerHTML = `
+        <h1>🎂 Happy Birthday Meeshu ❤️</h1>
+        <h2>You are my favorite person in this universe. 🌎</h2>
+        <p>
+        Thank you for every smile,
+        every memory,
+        and every moment.
+        <br><br>
+        May Allah bless you with happiness,
+        success, peace, and endless love.
+        <br><br>
+        ❤️ Forever Yours ❤️
+        <br>
+        <strong>Zain</strong>
+        </p>
+    `;
+
+}
+
+// Trigger finale after all gifts are opened
+// Replace this line in Part 4:
+//
+// createConfetti();
+//
+// with:
+//
+// createConfetti();
+// finalSurprise();
