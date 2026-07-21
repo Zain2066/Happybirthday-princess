@@ -203,3 +203,101 @@ showPage(giftRoom);
 },2500);
 
 });
+// ======================================
+// Interactive Gift Boxes
+// ======================================
+
+const gifts = document.querySelectorAll(".gift-box");
+const surpriseMessage = document.getElementById("surpriseMessage");
+
+const giftMessages = [
+
+"🌹 You're the most beautiful part of my life.",
+"💖 May every dream of yours come true.",
+"✨ You deserve endless happiness and love.",
+"🥹 Thank you for existing, Princess.",
+"🎂 Happy Birthday, Meeshu! I Love You ❤️"
+
+];
+
+let openedGifts = 0;
+let opened = [];
+
+gifts.forEach((gift, index) => {
+
+    gift.addEventListener("click", () => {
+
+        if (opened.includes(index)) return;
+
+        opened.push(index);
+
+        gift.classList.add("opened");
+
+        surpriseMessage.innerHTML = giftMessages[index];
+
+        openedGifts++;
+
+        if (openedGifts === 5) {
+
+            setTimeout(() => {
+
+                startCelebration();
+
+            }, 800);
+
+        }
+
+    });
+
+});
+
+// ======================================
+// Celebration
+// ======================================
+
+function startCelebration() {
+
+    surpriseMessage.innerHTML = `
+    🎉 Congratulations! 🎉<br><br>
+    You opened every gift! ❤️<br><br>
+    Happy Birthday, Meeshu!<br>
+    I hope this little universe made you smile. 🥹💖
+    <br><br>
+    Forever Yours,<br>
+    <strong>Zain ❤️</strong>
+    `;
+
+    createConfetti();
+
+}
+
+// ======================================
+// Confetti Effect
+// ======================================
+
+function createConfetti() {
+
+    for (let i = 0; i < 120; i++) {
+
+        const confetti = document.createElement("div");
+
+        confetti.className = "confetti";
+
+        confetti.style.left = Math.random() * 100 + "vw";
+
+        confetti.style.animationDelay = Math.random() * 3 + "s";
+
+        confetti.style.background =
+            `hsl(${Math.random()*360},90%,60%)`;
+
+        document.body.appendChild(confetti);
+
+        setTimeout(() => {
+
+            confetti.remove();
+
+        }, 5000);
+
+    }
+
+}
