@@ -1,0 +1,833 @@
+/* ===============================
+   MeeshuVerse ❤️
+   Created by Zain
+================================ */
+
+/* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#000;
+    color:white;
+    overflow-x:hidden;
+    min-height:100vh;
+
+}
+
+/* ===============================
+   Animated Background
+================================ */
+
+.background{
+
+    position:fixed;
+    inset:0;
+
+    z-index:-5;
+
+    overflow:hidden;
+
+    background:
+    linear-gradient(
+    135deg,
+    #000000,
+    #050520,
+    #110033,
+    #001b44,
+    #000000);
+
+    background-size:400% 400%;
+
+    animation:bgMove 18s ease infinite;
+
+}
+
+@keyframes bgMove{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+
+/* ===============================
+   Stars
+================================ */
+
+.stars{
+
+position:absolute;
+
+width:100%;
+
+height:100%;
+
+background-image:
+
+radial-gradient(white 1px,transparent 1px),
+
+radial-gradient(#66ccff 1px,transparent 1px),
+
+radial-gradient(hotpink 1px,transparent 1px);
+
+background-size:
+
+120px 120px,
+
+180px 180px,
+
+250px 250px;
+
+opacity:.7;
+
+animation:starsMove 80s linear infinite;
+
+}
+
+@keyframes starsMove{
+
+from{
+
+transform:translateY(0);
+
+}
+
+to{
+
+transform:translateY(-300px);
+
+}
+
+}
+
+/* ===============================
+   Floating Hearts
+================================ */
+
+.hearts::before{
+
+content:"❤️ 💖 💙 💜 ❤️ 💖 ❤️ 💙";
+
+position:absolute;
+
+width:100%;
+
+font-size:30px;
+
+opacity:.25;
+
+animation:heartFloat 18s linear infinite;
+
+}
+
+@keyframes heartFloat{
+
+0%{
+
+transform:translateY(120vh);
+
+}
+
+100%{
+
+transform:translateY(-120vh);
+
+}
+
+}
+
+/* ===============================
+   Sections
+================================ */
+
+section{
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+min-height:100vh;
+
+padding:25px;
+
+text-align:center;
+
+}
+/* ===============================
+   Logo
+================================ */
+
+.logo{
+
+font-size:55px;
+
+font-weight:bold;
+
+margin-bottom:20px;
+
+color:#fff;
+
+text-shadow:
+0 0 10px #ff4da6,
+0 0 20px #ff4da6,
+0 0 40px #66ccff;
+
+animation:logoGlow 2s infinite alternate;
+
+}
+
+@keyframes logoGlow{
+
+from{
+
+text-shadow:
+0 0 10px hotpink,
+0 0 20px hotpink,
+0 0 35px cyan;
+
+}
+
+to{
+
+text-shadow:
+0 0 20px #ff66cc,
+0 0 40px #66ccff,
+0 0 60px white;
+
+}
+
+}
+
+/* ===============================
+   Subtitle
+================================ */
+
+.subtitle{
+
+font-size:22px;
+
+max-width:700px;
+
+line-height:1.8;
+
+margin-bottom:30px;
+
+color:#f5f5f5;
+
+}
+
+.subtitle span{
+
+color:#ff66cc;
+
+font-weight:bold;
+
+}
+
+/* ===============================
+   Glass Card
+================================ */
+
+.glass{
+
+width:90%;
+
+max-width:500px;
+
+padding:35px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:
+0 0 25px rgba(255,0,150,.25);
+
+}
+
+/* ===============================
+   Headings
+================================ */
+
+h1{
+
+margin-bottom:20px;
+
+}
+
+h2{
+
+margin-bottom:25px;
+
+font-size:30px;
+
+}
+
+/* ===============================
+   Buttons
+================================ */
+
+button{
+
+padding:16px 35px;
+
+margin:12px;
+
+font-size:19px;
+
+font-weight:bold;
+
+color:white;
+
+border:none;
+
+border-radius:40px;
+
+cursor:pointer;
+
+background:
+linear-gradient(
+45deg,
+#ff4da6,
+#7b68ee,
+#4fc3ff);
+
+background-size:300% 300%;
+
+animation:buttonFlow 5s linear infinite;
+
+transition:.3s;
+
+box-shadow:
+0 0 20px rgba(255,0,150,.4);
+
+}
+
+button:hover{
+
+transform:scale(1.08);
+
+box-shadow:
+0 0 35px rgba(255,255,255,.6);
+
+}
+
+button:active{
+
+transform:scale(.95);
+
+}
+
+@keyframes buttonFlow{
+
+0%{
+
+background-position:0% 50%;
+
+}
+
+50%{
+
+background-position:100% 50%;
+
+}
+
+100%{
+
+background-position:0% 50%;
+
+}
+
+}
+
+/* ===============================
+   Message Area
+================================ */
+
+#message{
+
+margin-top:20px;
+
+font-size:20px;
+
+color:#ffd6f5;
+
+min-height:30px;
+
+  }
+/* ===============================
+   Birthday Universe
+================================ */
+
+#portal{
+
+display:none;
+
+}
+
+#celebration{
+
+width:100%;
+
+max-width:900px;
+
+padding:40px;
+
+border-radius:30px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:0 0 35px rgba(255,0,150,.25);
+
+animation:fadeUp 1s ease;
+
+}
+
+.birthdayTitle{
+
+font-size:60px;
+
+color:#ff66cc;
+
+text-shadow:
+0 0 15px hotpink,
+0 0 35px cyan;
+
+margin-bottom:20px;
+
+animation:pulse 2s infinite;
+
+}
+
+.welcomeText{
+
+font-size:22px;
+
+line-height:1.8;
+
+margin-top:20px;
+
+color:#ffffff;
+
+}
+
+@keyframes pulse{
+
+50%{
+
+transform:scale(1.05);
+
+}
+
+}
+
+@keyframes fadeUp{
+
+from{
+
+opacity:0;
+
+transform:translateY(40px);
+
+}
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===============================
+   Love Letter
+================================ */
+
+#letterPage{
+
+display:none;
+
+}
+
+.letterBox{
+
+width:95%;
+
+max-width:850px;
+
+padding:35px;
+
+border-radius:25px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(15px);
+
+border:1px solid rgba(255,255,255,.15);
+
+box-shadow:0 0 30px rgba(255,105,180,.3);
+
+margin:30px 0;
+
+}
+
+#typewriter{
+
+font-size:22px;
+
+line-height:2;
+
+white-space:pre-line;
+
+color:white;
+
+text-align:left;
+
+}
+
+/* ===============================
+   Photo Gallery
+================================ */
+
+#galleryPage{
+
+display:none;
+
+}
+
+.gallery{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+flex-wrap:wrap;
+
+gap:30px;
+
+margin-top:40px;
+
+}
+
+.photo{
+
+width:220px;
+
+height:320px;
+
+overflow:hidden;
+
+border-radius:25px;
+
+border:3px solid rgba(255,255,255,.2);
+
+box-shadow:
+0 0 25px hotpink;
+
+transition:.5s;
+
+}
+
+.photo:hover{
+
+transform:
+scale(1.08)
+rotate(2deg);
+
+box-shadow:
+0 0 45px cyan;
+
+}
+
+.photo img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+transition:.5s;
+
+}
+
+.photo:hover img{
+
+transform:scale(1.1);
+
+}
+
+/* ===============================
+   Mobile Responsive
+================================ */
+
+@media(max-width:768px){
+
+.logo{
+
+font-size:38px;
+
+}
+
+.birthdayTitle{
+
+font-size:42px;
+
+}
+
+.subtitle{
+
+font-size:18px;
+
+}
+
+.photo{
+
+width:170px;
+
+height:250px;
+
+}
+
+button{
+
+font-size:16px;
+
+padding:14px 28px;
+
+}
+
+  }
+/* ===============================
+   Gift Room
+================================ */
+
+#giftRoom{
+display:none;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:30px;
+min-height:100vh;
+}
+
+.giftIntro{
+font-size:22px;
+margin:20px 0 40px;
+line-height:1.8;
+color:#ffffff;
+}
+
+.giftContainer{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+max-width:900px;
+}
+
+.gift{
+font-size:75px;
+cursor:pointer;
+transition:.4s;
+filter:drop-shadow(0 0 15px hotpink);
+}
+
+.gift:hover{
+transform:scale(1.2) rotate(10deg);
+filter:drop-shadow(0 0 30px cyan);
+}
+
+#giftMessage{
+margin-top:40px;
+padding:25px;
+max-width:700px;
+font-size:22px;
+line-height:1.8;
+border-radius:20px;
+background:rgba(255,255,255,.08);
+backdrop-filter:blur(12px);
+box-shadow:0 0 25px rgba(255,105,180,.35);
+}
+
+/* ===============================
+   Portal Transition
+================================ */
+
+#portalTransition{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.95);
+justify-content:center;
+align-items:center;
+flex-direction:column;
+z-index:9999;
+}
+
+.portalCircle{
+width:170px;
+height:170px;
+border-radius:50%;
+border:8px solid hotpink;
+border-top-color:cyan;
+animation:spin 2s linear infinite;
+box-shadow:0 0 40px hotpink;
+margin-bottom:35px;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+#portalTransition h1{
+font-size:40px;
+text-align:center;
+text-shadow:0 0 20px hotpink;
+margin-bottom:20px;
+}
+
+#portalTransition p{
+font-size:22px;
+text-align:center;
+line-height:1.7;
+}
+
+/* ===============================
+   Balloons
+================================ */
+
+.balloons{
+font-size:45px;
+margin:20px;
+animation:floatBalloons 5s ease-in-out infinite;
+}
+
+@keyframes floatBalloons{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-18px);
+}
+}
+
+/* ===============================
+   Fireworks
+================================ */
+
+.fireworks{
+position:absolute;
+inset:0;
+pointer-events:none;
+background:
+radial-gradient(circle,#ffffff 2px,transparent 3px);
+background-size:150px 150px;
+opacity:.15;
+animation:fireworksFlash 1.2s infinite;
+}
+
+@keyframes fireworksFlash{
+50%{
+opacity:.45;
+}
+}
+
+/* ===============================
+   Rose Petals
+================================ */
+
+.petals::before{
+content:"🌹 🌹 🌹 🌹 🌹 🌹 🌹";
+position:absolute;
+width:100%;
+font-size:28px;
+animation:petalsFall 15s linear infinite;
+opacity:.7;
+}
+
+@keyframes petalsFall{
+0%{
+transform:translateY(-120%);
+}
+100%{
+transform:translateY(120%);
+}
+}
+
+/* ===============================
+   Footer
+================================ */
+
+.footer{
+padding:20px;
+text-align:center;
+font-size:18px;
+color:#dddddd;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(8px);
+}
+
+/* ===============================
+   Scrollbar
+================================ */
+
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:linear-gradient(hotpink,cyan);
+border-radius:20px;
+}
+
+::-webkit-scrollbar-track{
+background:#111;
+}
