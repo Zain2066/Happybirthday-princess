@@ -831,3 +831,50 @@ border-radius:20px;
 ::-webkit-scrollbar-track{
 background:#111;
 }
+/* Gift Open Animation */
+
+.gift-box.opened{
+    transform:scale(1.15) rotate(-8deg);
+    opacity:.9;
+    transition:.4s;
+}
+
+/* Surprise Message */
+
+#surpriseMessage{
+    margin-top:30px;
+    font-size:22px;
+    color:white;
+    text-align:center;
+    min-height:80px;
+}
+
+/* Confetti */
+
+.confetti{
+
+    position:fixed;
+
+    top:-20px;
+
+    width:10px;
+
+    height:16px;
+
+    animation:fall 5s linear forwards;
+
+    z-index:9999;
+
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-20px) rotate(0deg);
+}
+
+100%{
+transform:translateY(110vh) rotate(720deg);
+}
+
+}
