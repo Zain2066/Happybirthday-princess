@@ -993,3 +993,62 @@ margin:20px;
 font-weight:bold;
 
 }
+/* Welcome Page */
+...
+
+/* Birthday Universe */
+...
+
+/* Love Letter */
+...
+
+/* Gallery */
+...
+
+/* Portal */
+...
+
+/* Existing CSS ends here */
+
+
+/* ======================================
+   Part 4 - Gift Room
+====================================== */
+
+.gift-room{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:40px;
+}
+
+.gift-box{
+    width:90px;
+    height:90px;
+    background:#ff4d88;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:45px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.gift-box:hover{
+    transform:scale(1.1);
+}
+
+.gift-box.opened{
+    transform:scale(1.15) rotate(-8deg);
+    opacity:.8;
+}
+
+#surpriseMessage{
+    margin-top:30px;
+    text-align:center;
+    font-size:24px;
+    color:white;
+    min-height:80px;
+}
