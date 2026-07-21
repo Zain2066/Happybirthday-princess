@@ -1052,3 +1052,26 @@ font-weight:bold;
     color:white;
     min-height:80px;
 }
+/* ======================================
+Music Button
+====================================== */
+
+#musicToggle{
+    position:fixed;
+    top:20px;
+    right:20px;
+    padding:12px 18px;
+    border:none;
+    border-radius:30px;
+    background:#ff4d88;
+    color:#fff;
+    font-size:16px;
+    cursor:pointer;
+    z-index:9999;
+    transition:.3s;
+}
+
+#musicToggle:hover{
+    transform:scale(1.05);
+    background:#ff2d6f;
+}
