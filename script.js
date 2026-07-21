@@ -122,3 +122,84 @@ showPage(letterPage);
 startLetter();
 
 });
+// ======================================
+// Love Letter (Typewriter)
+// ======================================
+
+const letter = `
+
+Happy Birthday, Meeshu ❤️
+
+Today is one of the most special days for me,
+because it's the day you came into this world.
+
+I may not be able to hand you a real gift,
+but I made this little universe just for you.
+
+Every page...
+Every animation...
+Every line of code...
+was created with love.
+
+I pray that Allah fills your life with happiness,
+success, peace, and endless smiles.
+
+Always keep shining.
+
+Happy Birthday, Princess ❤️
+
+Forever Yours,
+
+Zain ❤️
+
+`;
+
+let letterIndex = 0;
+
+function startLetter(){
+
+typewriter.innerHTML = "";
+
+letterIndex = 0;
+
+const typing = setInterval(()=>{
+
+typewriter.innerHTML += letter.charAt(letterIndex);
+
+letterIndex++;
+
+if(letterIndex >= letter.length){
+
+clearInterval(typing);
+
+}
+
+},35);
+
+}
+
+// ======================================
+// Continue to Gallery
+// ======================================
+
+nextGallery.addEventListener("click",()=>{
+
+showPage(galleryPage);
+
+});
+
+// ======================================
+// Gallery → Gift Room
+// ======================================
+
+giftButton.addEventListener("click",()=>{
+
+showPage(portalTransition);
+
+setTimeout(()=>{
+
+showPage(giftRoom);
+
+},2500);
+
+});
