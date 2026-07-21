@@ -433,3 +433,110 @@ function finalSurprise() {
 //
 // createConfetti();
 // finalSurprise();
+// ======================================
+// Auto Photo Gallery Slideshow
+// ======================================
+
+const galleryImages = document.querySelectorAll(".gallery img");
+
+let currentImage = 0;
+
+function showGalleryImage(index){
+
+    galleryImages.forEach(img=>{
+        img.classList.remove("active");
+    });
+
+    if(galleryImages.length > 0){
+        galleryImages[index].classList.add("active");
+    }
+
+}
+
+if(galleryImages.length > 0){
+
+    showGalleryImage(0);
+
+    setInterval(()=>{
+
+        currentImage++;
+
+        if(currentImage >= galleryImages.length){
+            currentImage = 0;
+        }
+
+        showGalleryImage(currentImage);
+
+    },3000);
+
+}
+
+// ======================================
+// Love Quotes
+// ======================================
+
+const quotes = [
+
+"❤️ Every day with you is my favorite day.",
+
+"🌹 You make my world brighter.",
+
+"🥹 My happiest moments always include you.",
+
+"💖 You are my greatest blessing.",
+
+"✨ You are my forever favorite person."
+
+];
+
+const quoteElement = document.getElementById("loveQuote");
+
+if(quoteElement){
+
+    let quoteIndex = 0;
+
+    quoteElement.innerHTML = quotes[0];
+
+    setInterval(()=>{
+
+        quoteIndex++;
+
+        if(quoteIndex >= quotes.length){
+            quoteIndex = 0;
+        }
+
+        quoteElement.innerHTML = quotes[quoteIndex];
+
+    },4000);
+
+}
+
+// ======================================
+// Birthday Countdown
+// ======================================
+
+const countdown = document.getElementById("countdown");
+
+if(countdown){
+
+    let seconds = 10;
+
+    countdown.innerHTML = seconds;
+
+    const timer = setInterval(()=>{
+
+        seconds--;
+
+        countdown.innerHTML = seconds;
+
+        if(seconds <= 0){
+
+            clearInterval(timer);
+
+            countdown.innerHTML = "🎉 Happy Birthday! ❤️";
+
+        }
+
+    },1000);
+
+}
